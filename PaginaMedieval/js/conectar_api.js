@@ -60,20 +60,21 @@ fetch("http://localhost:3000").then(recurso => recurso.json()).then(datos => {
         });
         const boton_guardar = PanelCreacionItem.querySelector(".boton_guardar");
         boton_guardar.addEventListener("click", function {
-        const objeto_info_tarjeta_modificada = {
-            titulo: CrearItem_InputTitulo.value,
-            descripcion: input_descripcion.value,
-            imagen: ImagenPreview.src
-        }
+            const objeto_info_tarjeta_modificada = {
+                titulo: CrearItem_InputTitulo.value,
+                descripcion: input_descripcion.value,
+                imagen: ImagenPreview.src
+            }
         
-        fetch("http://localhost:3000", {
-            method: "PUT",
-            body: JSON.stringify(objeto_info_tarjeta_modificada);
-        }).then(recurso => recurso.json()).then (respuesta => {
-            alert(respuesta.mensaje);
-            window.location.reload();
-        })
-    });
+            fetch("http://localhost:3000", {
+                method: "PUT",
+                body: JSON.stringify(objeto_info_tarjeta_modificada);
+            }).then(recurso => recurso.json()).then (respuesta => {
+                alert(respuesta.mensaje);
+                window.location.reload();
+            });
+        });
+    }
     ColeccionItems.appendChild(PantallaAgregarItem);
 });
 

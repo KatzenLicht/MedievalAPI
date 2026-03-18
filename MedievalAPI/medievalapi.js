@@ -57,10 +57,19 @@ const server = http.createServer((request, response) => {
                     descripcion: objeto_tarjeta_modificada.descripcion,
                     imagen: objeto_tarjeta_modificada.imagen
                 }
-                
+
                 tarjetas.arreglo[objeto_tarjeta_modificada.indice] = objeto_modificado;
 
-
+                fs.writeFile("./json/tarjetas.json", JSON.stringify(tarjetas), err => {
+                    if(!err) {
+                        response.statusCode = 200;
+                        response.setHeader("Content-Type", "application/json");
+                        const objeto_respuesta = {
+                            mensaje: "Elemento modificado correctamente"
+                        }
+                        response.end(JSON.stringify(objeto_respuesta));
+                    }
+                });
             });
 
         break;
