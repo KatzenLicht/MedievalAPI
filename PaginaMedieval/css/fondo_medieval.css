@@ -1,0 +1,23 @@
+#FondoVideo1{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    opacity: 0.5;
+    /*mix-blend-mode: soft-light;*/
+    mix-blend-mode: luminosity;
+    pointer-events:none;
+}
+
+#FondoVideo2{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    opacity: 0.75;
+    z-index: 10;
+    
+    mix-blend-mode: soft-light;
+    pointer-events:none;
+
+}
